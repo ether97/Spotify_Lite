@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/d307fdd40e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/styles/favoriteSongs.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include('partials/sidebar.ejs')  %>
+
+  <div style=" height: 100%; width: 100vw; margin-left: 20px; margin-left: 250px;background: linear-gradient(to bottom, #7e15e0, black); overflow:auto;">
+    <%- include('partials/navbar.ejs', {username: user.username}) %>
+    <div style="width: 100%; padding-left: 30px; padding-top: 25px; display: flex; align-items: center; margin-bottom: 30px;">
+      <div style="height: 230px; width: 230px; background: linear-gradient(to right bottom, blue, white); display: flex; justify-content: center; align-items: center;">
+        <i class="fa-solid fa-heart " style="scale: 5; color: white;"></i>
+
+      </div>
+      <div style="display: flex;height: 230px; align-items: start; flex-direction: column; justify-content: end; margin-left: 30px;">
+        <p style="color: white;">Playlist</p>
+        <h1 style="font-size: 6rem; margin-bottom: 30px; color: white;">Liked Songs</h1>
+        <p style="color: white;"><%= user.username %> &#x2022; <%= songs.length %> songs</p>
+      </div>
+    </div>
+    <div style="width: 100%; background-color: rgba(1,1,1,0.2); ">
+      <div style=" height: 150px;">
+        <i style="scale: 4; border-radius: 50%; color: green; background-color: black; margin-left: 57px; margin-top: 50px;" class="fa-solid fa-circle-play"></i>
+      </div>
+      <div style="width: 100%; padding-left: 30px; padding-right: 50px;">
+        <div style="width: 100%; height: 30px; display: grid; grid-template-columns: 2fr 1fr 2fr 0.5fr ;align-items: center;">
+          <p style="color: gray;">#&nbsp;&nbsp;&nbsp;&nbsp;Title</p>
+          <p style="color: gray;">Album</p>
+          <p style="color: gray;">Date added</p>
+          <i style="color: gray" class="fa-solid fa-clock"></i>
+        </div>
+        <div style="height: 1px; width: 100%; background-color: rgb(78, 78, 78);"></div>
+        <% for (let i = 0; i < songs.length; i++ ) {%>
+        <% const {picture, title, artist, album, date, runtime} = songs[i] %>
+        <% (function() { %>
+        <%- include('partials/wideDiv.ejs', {index: i+1, picture: picture, title: title, artist: artist, album: album, date: date, runtime: runtime}) %>
+        <% })();%>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <script>
+    function goHome() {
+      location.href = 'http://localhost:3000/user'
+    }
+  </script>
+</body>
+
+</html>

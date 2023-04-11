@@ -1,0 +1,9 @@
+<div id="hover-div" style="width: 350px" onclick="addSong('<%= title %>')">
+  <div style="background-image: url('../public/images/<%= picture %>'); height: 100px; width: 100px; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+  <h1 style="color: white;"><%= title %></h1>
+  <div style="display: flex; gap: 30px;">
+    <p style="color: gray"><%= artist %></p>
+    <p style="color: white;">Song</p>
+  </div>
+  <i style="position: absolute; scale: 2; color: white; bottom: 20px; right: 20px;" class="fa-solid fa-square-plus"></i>
+</div>

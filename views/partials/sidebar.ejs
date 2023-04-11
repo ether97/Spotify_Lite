@@ -1,0 +1,50 @@
+<div id="sidebar">
+  <div id="spotify-header">
+    <i class="fa-brands fa-spotify"></i>
+    <h1>Spotify</h1>
+    <!-- <button id="add-song">Going Under</button>
+      <button id="get-songs">get songs</button> -->
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 40px; margin-bottom: 50px">
+    <div id="div-link" onclick="goHome()">
+      <i class="fa-sharp fa-solid fa-house"></i>
+      <h4>Home</h4>
+
+    </div>
+    <div id="div-link" onClick="goSearch()">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <h4 style="padding-left: 2px">Search</h4>
+    </div>
+    <div id="div-link">
+      <i class="fa-sharp fa-regular fa-bookmark"></i>
+      <h4 style="padding-left: 5px">Your Library</h4>
+    </div>
+  </div>
+  <div>
+    <div style="display: flex; flex-direction: column; gap: 20px; width: 100%;">
+      <div id="div-link">
+        <i class="fa-regular fa-square-plus"></i>
+        <h4 style="padding-left: 3px">Create Playlist</h4>
+      </div>
+      <div id="div-link" onclick="likedSongs()" style="padding-left: 26px;">
+        <i class="fa-solid fa-heart center-i"></i>
+        <h4>Liked Songs</h4>
+      </div>
+      <div style="height: 1px; width: 80%; background-color: gray; margin-left: 25px;"></div>
+    </div>
+  </div>
+</div>
+<script>
+  function goHome() {
+    location.href = 'http://localhost:3000/user'
+  }
+
+  function likedSongs() {
+    location.href = 'http://localhost:3000/user/songs'
+
+  }
+
+  function goSearch() {
+    location.href = 'http://localhost:3000/user/search'
+  }
+</script>

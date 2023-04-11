@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/d307fdd40e.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    #filter-button {
+      border: none;
+      background-color: rgb(34, 34, 34);
+      padding: 10px;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+
+    }
+
+    #hover-div {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(34, 34, 34);
+      padding: 20px;
+      margin-left: 30px;
+      gap: 20px;
+      border-radius: 10px;
+      transition: 0.5s;
+      position: relative;
+    }
+
+    #hover-div:hover {
+      background-color: rgb(51, 51, 51);
+      cursor: pointer;
+    }
+  </style>
+  <link rel="stylesheet" href="/public/styles/homePage.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include('partials/sidebar.ejs')  %>
+  <div style="height: 100%; width: 100vw; padding-left: 20px; margin-left: 250px;background-color: rgb(27, 27, 27); overflow:auto;">
+    <%- include('partials/navbarWithSearch.ejs', {username}) %>
+    <% if (songNotFound) { %>
+    <h2 style="color: white; margin: 10px 30px 30px 30px;">Song not found</h2>
+
+    <% } %>
+    <% if (!basic) { %>
+    <%- include('partials/searchPageFilters.ejs') %>
+    <h2 style="color: white; margin: 10px 30px 30px 30px;">Top Result</h2>
+
+    <% if (songs.length === 1) { %>
+
+    <%- include('partials/searchPageResult.ejs', {title: songs[0].title, picture: songs[0].picture, artist: songs[0].artist}) %>
+    <% } else { %>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; ">
+
+      <% for (let i = 0; i < songs.length; i++) { %>
+      <%  const {title, picture, artist} = songs[i]; %>
+      <%  (function() { %>
+      <%- include('partials/searchPageResult.ejs', {title, picture, artist}) %>
+      <%  })() %>
+      <% } %>
+      <% } %>
+      <% } %>
+    </div>
+
+  </div>
+  <script>
+    async function addSong(title) {
+      console.log('hi')
+      const data = await fetch('http://localhost:3000/user/songs/like', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title: title
+        })
+      })
+      const jsonData = await data.json();
+      if (jsonData.message) {
+        window.alert(jsonData.message);
+      } else if (jsonData.error) {
+        window.alert(jsonData.error);
+      }
+
+    }
+    var button = document.getElementById('add-song');
+    var button1 = document.getElementById('get-songs');
+    var songListDiv = document.getElementById('song-list');
+    songListDiv.addEventListener('click', async function() {
+      location.href = 'http://localhost:3000/user/songs'
+    })
+
+    button1.addEventListener('click', async function() {
+      try {
+        const data = await fetch('http://localhost:3000/user/songs', {
+          method: "GET"
+        })
+        const jsonData = data.json();
+        console.log(jsonData);
+      } catch (error) {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

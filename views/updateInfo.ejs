@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/d307fdd40e.js" crossorigin="anonymous"></script>
+  <style>
+    #header {
+      display: flex;
+      height: 100px;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .fa-spotify {
+      scale: 3;
+      color: white;
+    }
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      background-color: rgb(36, 36, 143);
+    }
+
+    h3 {
+      color: white;
+      font-weight: lighter;
+    }
+
+    .fa-solid {
+      color: gray
+    }
+
+    .fa-regular {
+      color: gray
+    }
+
+    input {
+      padding: 15px;
+      background-color: transparent;
+      border-radius: 5px;
+      border: 1px solid black;
+      display: flex;
+      outline: none;
+    }
+
+    select {
+      padding: 15px;
+      background-color: transparent;
+      border-radius: 5px;
+      border: 1px solid black;
+      display: flex;
+    }
+
+    option {
+      background-color: rgb(34, 34, 34);
+      color: white;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    button {
+      width: 150px;
+      padding: 15px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      border: none;
+      font-weight: bolder;
+      letter-spacing: 0.1rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 100%; background-color: black; height: 100px; display: flex; align-items: center; justify-content: center;">
+    <div style="width: 1200px; background-color: transparent; display: flex; align-items: center; justify-content: space-between;">
+      <div id="header">
+        <i class="fa-brands fa-spotify"></i>
+        <h1 style="color: white;">Spotify</h1>
+      </div>
+      <div style="height: 100px; display: flex; justify-content: center; align-items: center; gap: 30px;">
+        <h3>Premium</h3>
+        <h3>Support</h3>
+        <h3>Download</h3>
+        <div style="height: 30px; width: 1px; background-color: white;"></div>
+        <h3>Profile</h3>
+        <i style="color: white" class="fa-solid fa-caret-down"></i>
+      </div>
+    </div>
+  </div>
+  <div style="width: 1300px; height: 90vw; display: flex; align-items: center; justify-content: center;">
+    <div style="width: 450px; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgb(34,34,34);">
+      <i style="scale: 4; color: gray; margin-bottom: 100px;" class="fa-regular fa-user"></i>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-house"></i>
+        <h3>Account overview</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-pen"></i>
+        <h3>Edit profile</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-pen"></i>
+        <h3>Address</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-lock"></i>
+        <h3>Change password</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-bell"></i>
+        <h3>Notification settings</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-lock"></i>
+        <h3>Privacy settings</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-credit-card"></i>
+        <h3>Saved payment cards</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <h3>Recover playlists</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-regular fa-clock"></i>
+        <h3>Receipts</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-puzzle-piece"></i>
+        <h3>Apps</h4>
+      </div>
+      <div style="width: 100%; height: 50px; border-top: 1px solid rgb(53, 53, 53);border-bottom: 1px solid rgb(53, 53, 53); display: flex; align-items: center;  gap: 30px; padding-left: 100px;">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Redeem</h4>
+      </div>
+    </div>
+    <div style="width: 850px; background-color: white; height: 100%; display: flex; align-items: center; justify-content: center; ">
+      <div style="display: flex; flex-direction: column; width: 750px;">
+        <h1>Edit profile</h1>
+        <form id="update-form" style="display: flex; flex-direction: column; gap: 20px;">
+          <label>Email</label>
+          <input type="text" name="email" id="email-input" placeholder="<%= email %>" />
+          <label>Password</label>
+          <input type="text" name="password" id="password-input" />
+          <label>Username</label>
+          <input type="text" name="username" placeholder="<%= username %>" id="username-input" />
+          <label>Gender</label>
+          <select>
+            <option selected>Male</option>
+            <option selected>Female</option>
+            <option selected>Non-binary</option>
+            <option selected>Prefer not to say</option>
+            <option selected>Other</option>
+          </select>
+          <label>Date of birth</label>
+
+          <div style="width: 450px; gap: 20px; display: flex;">
+            <div>
+              <select id="months" name="months" style="width: 200px; " required>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+            </div>
+            <div>
+              <input type="day" style="width: 72px; " placeholder="DD" name="day" id="input-day" />
+            </div>
+            <div>
+              <input type="year" style="width: 72px; " placeholder="YYYY" name="year" id="input-year" />
+            </div>
+
+          </div>
+          <label>Country or region</label>
+          <select>
+            <option selected>USA</option>
+          </select>
+          <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+
+            <input type="radio" name="share" />
+            <label for="share">Share my registration data with Spotify's content providers for marketing purposes.</label>
+          </div>
+          <div style="width: 750px; height: 1px; background-color: gray;"></div>
+          <div style="display: flex; justify-content: flex-end; width: 750px; align-items: center;">
+            <button style="background-color: transparent;">Cancel</button>
+            <button style="background-color: rgb(0, 189, 0);" type="submit">Save profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    var form = document.getElementById('update-form');
+    form.addEventListener("submit", async function(e) {
+
+      e.preventDefault();
+      var formData = new FormData(this);
+      var loginInfo = Array.from(formData.entries()).reduce(
+        (map, [key, value]) => ({
+          ...map,
+          [key]: value,
+        }), {}
+      );
+      console.log(loginInfo);
+      const data = await fetch('http://localhost:3000/user/info', {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: loginInfo.email,
+          password: loginInfo.password,
+          username: loginInfo.username
+        })
+      })
+      const jsonData = await data.json();
+      if (jsonData.message === "Success") {
+        location.href = 'http://localhost:3000/user';
+      } else if (jsonData.error) {
+        window.alert(jsonData.error);
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/d307fdd40e.js" crossorigin="anonymous"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/styles/register.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="header">
+    <i class="fa-brands fa-spotify"></i>
+    <h1>Spotify</h1>
+  </div>
+  <div style="width: 100%; height: 1px; background-color: gray;"></div>
+  <div id="container">
+
+  </div>
+  <div id="button-div">
+    <h2 style="font-weight: bold; font-size: 1.8rem;">Sign up for free to start listening.</h2>
+    <button id="facebook">
+      <i class="fa-brands fa-facebook"></i>
+      CONTINUE WITH FACEBOOK
+    </button>
+    <button id="google">
+      <i class="fa-brands fa-google"></i>
+      CONTINUE WITH GOOGLE
+    </button>
+  </div>
+  <div style="width: 450px; display: flex; align-items: center;justify-content: center; gap: 20px; margin-top: 20px;">
+    <div style="width: 40%; height: 1px; background-color: gray;"></div>
+    <div>or</div>
+    <div style="width: 40%; height: 1px; background-color: gray;"></div>
+  </div>
+  <h2>Sign up with your email address</h2>
+  <form id="register-form">
+    <label>What's your email?</label>
+    <input type="text" placeholder="Enter your email." name="email" id="input-email" required />
+    <label>Confirm your email</label>
+    <input type="text" placeholder="Enter your email again." name="email" id="confirm-email" required />
+    <label>Create a password</label>
+    <input type="password" placeholder="Create a password." name="password" id="input-password" required />
+    <label>What should we call you?</label>
+    <input type="username" placeholder="Enter a profile name." name="username" id="input-username" required />
+    <p>This appears on your profile.</p>
+    <label>What's your date of birth?</label>
+    <div style="width: 450px; gap: 20px; display: flex;">
+      <div>
+        <label>Month</label>
+        <select id="months" name="months" style="width: 200px; margin-top: 10px;" required>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+      </div>
+      <div>
+        <label>Day</label>
+        <input type="day" style="width: 72px; margin-top: 10px;" placeholder="DD" name="day" id="input-day" required />
+      </div>
+      <div>
+        <label>Year</label>
+        <input type="year" style="width: 72px; margin-top: 10px;" placeholder="YYYY" name="year" id="input-year" required />
+      </div>
+
+    </div>
+
+    <label>What's your gender?</label>
+    <div style="display: flex; align-items: center; height: 50px; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <input type="radio" id="male" name="gender" value="male">
+        <label id="gender" for="male">Male</label><br>
+
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label id="gender" for="female">Female</label><br>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+
+        <input type="radio" id="non-binary" name="gender" value="non-binary">
+        <label id="gender" for="non-binary">Non-binary</label>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+
+        <input type="radio" id="other" name="gender" value="other">
+        <label id="gender" for="other">Other</label>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+
+        <input type="radio" id="prefer" name="gender" value="prefer">
+        <label id="gender" for="prefer">Prefer not to say</label>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+
+      <input type="radio" name="share" value="share">
+      <label id="gender" for="share">Share my registration data with Spotify's content providers for marketing purposes.</label>
+    </div>
+    <div style="width: 100%; display:flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+      <p style="font-size: 0.8rem">By clicking on sign-up, you agree to Spotify's <a style="color: green" href="javascript:void(0)">Terms and Conditions of Use.</a></p>
+      <p style="font-size: 0.8rem">To learn more about how Spotify collects, uses, shares and protects your personal data, please see <a style="color: green; text-align: center;" href="javascript:void(0)">Spotify's Privacy Policy</a></p>
+      <button id="submit-button" type="submit">Sign up</button>
+    </div>
+  </form>
+
+  <script>
+    var form = document.getElementById("register-form");
+    var button = document.getElementById("submit-button");
+    const header = document.getElementById("success");
+
+    function validateEmail(email) {
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (email.match(mailformat)) {
+        return true;
+      }
+      return false;
+    }
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      var loginInfo = Array.from(formData.entries()).reduce(
+        (map, [key, value]) => ({
+          ...map,
+          [key]: value,
+        }), {}
+      );
+      console.log(loginInfo);
+      if (!validateEmail(loginInfo.email)) return window.alert('Invalid email!')
+      try {
+        const data = await fetch("http://localhost:3000/user/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: loginInfo.email,
+            password: loginInfo.password,
+            username: loginInfo.username
+          }),
+        });
+        const jsonData = await data.json();
+        console.log(jsonData);
+        if (jsonData.message === "Success") {
+          location.href = 'http://localhost:3000/user';
+        } else {
+          window.alert('User already exists!')
+        }
+      } catch (error) {}
+    });
+  </script>
+</body>
+
+</html>

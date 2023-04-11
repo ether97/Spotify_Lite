@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+#spotify-header {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 20px;
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 30px;
+  font-size: smaller;
+}
+
+#sidebar {
+  height: 100%;
+  position: fixed;
+  width: 250px;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+
+.fa-spotify {
+  scale: 3;
+}
+
+.fa-sharp {
+  color: white;
+  color: gray;
+  scale: 1.5;
+}
+
+.fa-heart {
+  scale: 1.5;
+  color: lightblue;
+}
+
+.fa-regular {
+  scale: 1.5;
+  color: gray;
+}
+
+#div-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 30px;
+}
+
+#div-link:hover {
+  cursor: pointer;
+}
+
+h4:hover {
+  color: white;
+}
+
+.fa-magnifying-glass {
+  scale: 1.5;
+  color: gray;
+}
+
+#svg-house {
+  scale: 0.1;
+  color: white;
+}
+
+h4 {
+  margin: 0;
+  color: gray;
+  font-weight: bold;
+}
+
+.fa-right-long {
+  scale: 1.5;
+  color: gray;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.fa-left-long {
+  scale: 1.5;
+  color: gray;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.fa-user {
+  scale: 1;
+  background-color: gray;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-caret-down {
+  scale: 1;
+  height: 100%;
+  padding-right: 10px;
+}
+
+#upgrade-button {
+  background-color: transparent;
+  border: 1px solid gray;
+  font-weight: bold;
+  padding: 8px 20px 8px 20px;
+  border-radius: 30px;
+  color: white;
+}
+
+.center-i {
+  scale: 1;
+  padding: 10px;
+  background: linear-gradient(to right bottom, blue, white);
+  height: 22px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#song-list:hover {
+  cursor: pointer;
+}

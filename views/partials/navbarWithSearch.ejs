@@ -1,0 +1,89 @@
+<style>
+  i:active {
+    border: none;
+  }
+
+  input {
+    outline: none;
+  }
+
+  button {
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+  }
+
+  option {
+    color: white;
+    margin: 10px;
+    width: 100px;
+    background-color: rgb(34, 34, 34);
+  }
+</style>
+<div style="display: flex; justify-content: space-between; align-items: center; height: 70px; width: 100%; position: static">
+  <div style="display: flex; gap: 40px; align-items: center; justify-content: center;">
+    <div style="display: flex; align-items: center; justify-content: center; height: 90px; padding-left: 30px; gap: 20px">
+      <i class="fa-solid fa-left-long"></i>
+      <i class="fa-solid fa-right-long"></i>
+    </div>
+    <div style="display: flex; gap: 20px; align-items: center; justify-content: center; background-color: white; padding: 10px; border-radius: 25px;">
+      <i style="color: black" class="fa-solid fa-magnifying-glass" onclick="handleSearch()"></i>
+
+      <input style="border: none; width: 200px" type="text" placeholder="What do you want to listen to?" name='search' id='title-bar' required />
+    </div>
+    <div style="display: flex; gap: 20px; align-items: center; justify-content: center; background-color: white; padding: 10px; border-radius: 25px;">
+      <i style="scale: 1.7" class="fa-solid fa-earth-americas"></i>
+
+      <input style="border: none; width: 120px" type="text" placeholder="Which language?" name='language' id='language-bar' required />
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center; justify-content: center; background-color: white; padding: 10px; border-radius: 25px;">
+      <i style="scale: 1.2" class="fa-solid fa-music"></i>
+
+      <input style="border: none; width: 120px" type="text" placeholder="Which artist?" name='artist' id='artist-bar' required />
+    </div>
+
+
+  </div>
+  <div style="display: flex; height: 50px; align-items: center; justify-content: center; gap: 20px; padding-right: 30px;">
+    <button id="upgrade-button">Upgrade</button>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: black; border-radius: 30px; padding-left: 3px;">
+      <i class="fa-solid fa-user"></i>
+      <h4><%= username %></h4>
+      <select style="width: 20px; padding: 10px; color: white; border: none; background-color: transparent; margin-right: 5px;" onchange="logout(value)">
+        <option value="Account">Account
+        </option>
+        <option value="Profile">Profile</option>
+        <option value="Upgrade to Premium">Upgrade to Premium</option>
+        <option value="Settings">Settings</option>
+        <option value="Log out" onclick="logout()">Log out</option>
+      </select>
+    </div>
+  </div>
+</div>
+<script>
+  async function handleSearch() {
+    var title = document.getElementById('title-bar').value;
+    var language = document.getElementById('language-bar').value;
+    var artist = document.getElementById('artist-bar').value;
+    location.href = 'http://localhost:3000/user/search?' + `title=${title}&language=${language}&artist=${artist}`
+
+
+  }
+
+  async function logout(value) {
+    if (value === "Log out") {
+
+      console.log('hi')
+      const data = await fetch('http://localhost:3000/user/logout', {
+        method: "POST"
+      })
+      const jsonData = await data.json();
+      console.log(jsonData);
+      if (jsonData.message === "Success") {
+        location.href = 'http://localhost:3000/user/login';
+      }
+    } else if (value === "Settings") {
+      location.href = 'http://localhost:3000/user/info'
+    }
+  }
+</script>

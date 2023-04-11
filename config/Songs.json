@@ -1,0 +1,134 @@
+[
+  {
+    "picture": "evanescence.jpg",
+    "title": "Bring Me to Life",
+    "language": "English",
+    "album": "Fallen",
+    "date": "March 4, 2003",
+    "runtime": "3:57",
+    "liked": true,
+    "genre": "Hard Rock",
+    "artist": "Evanescence"
+  },
+  {
+    "picture": "evanescence.jpg",
+    "title": "Going Under",
+    "language": "English",
+    "album": "Fallen",
+    "date": "March 4, 2003",
+    "runtime": "4:03",
+    "liked": true,
+    "genre": "Hard Rock",
+    "artist": "Evanescence"
+  },
+  {
+    "picture": "evanescence.jpg",
+    "title": "Everybody's Fool",
+    "language": "English",
+    "album": "Fallen",
+    "date": "March 4, 2003",
+    "runtime": "3:03",
+    "liked": true,
+    "genre": "Hard Rock",
+    "artist": "Evanescence"
+  },
+  {
+    "picture": "evanescence.jpg",
+    "title": "My Immortal",
+    "language": "English",
+    "album": "Fallen",
+    "date": "March 4, 2003",
+    "runtime": "3:44",
+    "liked": true,
+    "genre": "Hard Rock",
+    "artist": "Evanescence"
+  },
+  {
+    "picture": "linkinpark.jpg",
+    "title": "Numb",
+    "language": "English",
+    "album": "Meteora",
+    "date": "March 25, 2003",
+    "runtime": "3:11",
+    "liked": true,
+    "genre": "Pop Rock",
+    "artist": "Linkin Park"
+  },
+  {
+    "picture": "linkinpark.jpg",
+    "title": "In the End",
+    "language": "English",
+    "album": "Meteora",
+    "date": "March 25, 2003",
+    "runtime": "3:33",
+    "liked": true,
+    "genre": "Pop Rock",
+    "artist": "Linkin Park"
+  },
+  {
+    "picture": "linkinpark.jpg",
+    "title": "Lost",
+    "language": "English",
+    "album": "One More Light",
+    "date": "January 01, 2015",
+    "runtime": "3:33",
+    "liked": true,
+    "genre": "Pop Rock",
+    "artist": "Linkin Park"
+  },
+  {
+    "picture": "linkinpark.jpg",
+    "title": "Breaking the Habit",
+    "language": "English",
+    "album": "Living Things",
+    "date": "March 11, 2018",
+    "runtime": "3:11",
+    "liked": true,
+    "genre": "Pop Rock",
+    "artist": "Linkin Park"
+  },
+  {
+    "picture": "linkinpark.jpg",
+    "title": "New Divide",
+    "language": "English",
+    "album": "Hybrid Theory",
+    "date": "March 02, 2010",
+    "runtime": "3:11",
+    "liked": true,
+    "genre": "Pop Rock",
+    "artist": "Linkin Park"
+  },
+  {
+    "picture": "50cent.jpg",
+    "title": "Like My Style",
+    "language": "English",
+    "album": "Get Rich or Die Trying",
+    "date": "February 6, 2003",
+    "runtime": "3:13",
+    "liked": true,
+    "genre": "Rap",
+    "artist": "50 cent"
+  },
+  {
+    "picture": "50cent.jpg",
+    "title": "Don't Push Me",
+    "language": "English",
+    "album": "Get Rich or Die Trying",
+    "date": "February 6, 2003",
+    "runtime": "4:13",
+    "liked": true,
+    "genre": "Rap",
+    "artist": "50 cent"
+  },
+  {
+    "picture": "50cent.jpg",
+    "title": "Patiently Waiting",
+    "language": "English",
+    "album": "Get Rich or Die Trying",
+    "date": "February 6, 2003",
+    "runtime": "4:01",
+    "liked": true,
+    "genre": "Rap",
+    "artist": "50 cent"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "picture": "50cent.jpg",
+    "name": "50 Cent",
+    "songs": ["Like My Style", "Don't Push Me", "Patiently Waiting"]
+  },
+  {
+    "picture": "linkinpark.jpg",
+    "name": "Linkin Park",
+    "songs": ["Numb", "In the End", "Lost", "Breaking the Habit", "New Divide"]
+  },
+  {
+    "picture": "evanescence.jpg",
+    "name": "Evanescence",
+    "songs": [
+      "Bring Me to Life",
+      "My Immortal",
+      "Going Under",
+      "Everybody's Fool"
+    ]
+  }
+]

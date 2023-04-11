@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/d307fdd40e.js" crossorigin="anonymous"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/styles/login.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="header">
+    <i class="fa-brands fa-spotify"></i>
+    <h1>Spotify</h1>
+  </div>
+  <div style="width: 100%; height: 1px; background-color: gray;"></div>
+  <div id="container">
+
+  </div>
+  <div id="button-div">
+    <p>To continue, log in to Spotify</p>
+    <button id="facebook">
+      <i class="fa-brands fa-facebook"></i>
+      CONTINUE WITH FACEBOOK
+    </button>
+    <button id="apple">
+      <i class="fa-brands fa-apple"></i>
+      CONTINUE WITH APPLE
+    </button>
+    <button id="google">
+      <i class="fa-brands fa-google"></i>
+      CONTINUE WITH GOOGLE
+    </button>
+  </div>
+  <div style="width: 450px; display: flex; align-items: center;justify-content: center; gap: 20px">
+    <div style="width: 40%; height: 1px; background-color: gray;"></div>
+    <div>OR</div>
+    <div style="width: 40%; height: 1px; background-color: gray;"></div>
+  </div>
+  <form id="login-form">
+    <label>Email address</label>
+    <input type="text" placeholder="Email address" name="email" id="input-email" required />
+    <label>Password</label>
+    <input type="password" placeholder="Password" name="password" id="input-password" required />
+
+
+    <div style="width: 450px; display: flex">
+
+      <a style="color: black" href="javascript:void(0)">Forgot your password?</a>
+    </div>
+    <div style="width: 450px; display: flex; justify-content: space-between">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px">
+        <i class="fa-solid fa-square-check"></i>
+        <p>Remember me</p>
+      </div>
+      <button id="submit-button" type="submit">LOG IN</button>
+
+    </div>
+  </form>
+  <div style="width: 450px; height: 1px; background-color: gray;"></div>
+  <h3>Don't have an account?</h3>
+  <button id="signup" onclick="goToSignup()">SIGN UP FOR SPOTIFY</button>
+  <script>
+    var form = document.getElementById("login-form");
+    var button = document.getElementById("submit-button");
+    const header = document.getElementById("success");
+
+    function goToSignup() {
+      location.href = 'http://localhost:3000/user/register'
+    }
+
+    function validateEmail(email) {
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (email.match(mailformat)) {
+        return true;
+      }
+      return false;
+    }
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      var loginInfo = Array.from(formData.entries()).reduce(
+        (map, [key, value]) => ({
+          ...map,
+          [key]: value,
+        }), {}
+      );
+      if (!validateEmail(loginInfo.email)) return window.alert('Invalid email!')
+      console.log(loginInfo);
+      try {
+        const data = await fetch("http://localhost:3000/user/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: loginInfo.email,
+            password: loginInfo.password,
+          }),
+        });
+        const jsonData = await data.json();
+        console.log(jsonData);
+        if (jsonData.message === "Success") {
+          location.href = 'http://localhost:3000/user';
+        } else {
+          window.alert('Incorrect password/email')
+        }
+      } catch (error) {}
+    });
+  </script>
+</body>
+
+</html>
